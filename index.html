@@ -35,10 +35,26 @@
         </div>
 
         <div>
-            <button onclick="toggleButtonStyle('all-filter-btn')" id="all-filter-btn" class="bg-[#3B82F6] border-gray-100 rounded-lg text-white px-5 py-2">All</button>
-            <button onclick="toggleButtonStyle('interview-filter-btn')" id="interview-filter-btn" class="bg-[#FFFFFF] border-2 border-gray-100 rounded-lg text-[#64748B] px-5 py-2">Interview</button>
-            <button onclick="toggleButtonStyle('rejected-filter-btn')" id="rejected-filter-btn" class="bg-[#FFFFFF] border-2 border-gray-100 rounded-lg text-[#64748B] px-5 py-2">Rejected</button>
+            <button onclick="toggleButtonStyle('all-filter-btn')" id="all-filter-btn" class="bg-[#3B82F6] border-gray-100 rounded-lg text-white px-5 py-2 w-28">All</button>
+            <button onclick="toggleButtonStyle('interview-filter-btn')" id="interview-filter-btn" class="bg-[#FFFFFF] border-2 border-gray-100 rounded-lg text-[#64748B] px-5 py-2 w-28">Interview</button>
+            <button onclick="toggleButtonStyle('rejected-filter-btn')" id="rejected-filter-btn" class="bg-[#FFFFFF] border-2 border-gray-100 rounded-lg text-[#64748B] px-5 py-2 w-28">Rejected</button>
         </div>
+
+        <section id="filtered-job" class="hidden space-y-4 mt-4">
+
+        </section>
+
+        <section id="no-filtered-job">
+            <div class="card bg-[#FFFFFF] rounded-lg p-4 mt-4">
+                <div class="flex flex-col items-center py-20">
+                    <img src="./images/jobs.png" alt="">
+                    <div class="mt-4 text-center">
+                        <p class="text-[#002C5C] font-semibold text-2xl">No jobs available</p>
+                        <p class="text-[#64748B]">Check back soon for new job opportunities</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section id="cardCount" class="space-y-4 mt-4">
             <!-- Job 1 -->
