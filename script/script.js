@@ -38,26 +38,22 @@ function toggleButtonStyle(id){
 }
 
 mainContainer.addEventListener('click', function(event){
+    // console.log(event.target.parentNode.parentNode);
+
     const card = event.target.parentNode.parentNode;
-    // console.log(card.querySelector('.companyName').innerText);
+    const companyName = card.querySelector('.companyName').innerText;
+    const jobPosition = card.querySelector('.jobPosition').innerText;
+    const jobInfo = card.querySelector('.jobInfo').innerText;
+    const status = card.querySelector('.status').innerText;
+    const jobDetails = card.querySelector('.jobDetails').innerText;
 
-    const companyNameData = card.querySelector('.companyName').innerText;
-    const jobPositionData = card.querySelector('.jobPosition').innerText;
-    // const jobInfoData = card.querySelector('.jobInfo').innerText;
-    // const statusData = card.querySelector('.status').innerText;
-    // const jobDetailsData = card.querySelector('.jobDetails').innerText;
-    // const btnInterviewData = card.querySelector('.btnInterview').innerText;
-    // const btnRejectedData = card.querySelector('.btnRejected').innerText;
+    const cardInfo = {
+        companyName, 
+        jobPosition, 
+        jobInfo, 
+        status, 
+        jobDetails
+    }
+    console.log(cardInfo);
 
-    // const cardInfo = {
-    //     companyNameData,
-    //     jobPositionData,
-    //     jobInfoData,
-    //     statusData,
-    //     jobDetailsData,
-    //     btnInterviewData,
-    //     btnRejectedData
-    // }
-
-    console.log(companyNameData, jobPositionData)
 })
