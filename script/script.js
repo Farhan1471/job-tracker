@@ -18,7 +18,7 @@ const rejectedFilterBtn = document.getElementById('rejected-filter-btn');
 
 
 function updateAvailableJobsCount() {
-    if (currentStatus === 'all') {
+    if (currentStatus === 'all-filter-btn') {
         availableJobsCount.innerText = sectionCardCount.children.length;
     } 
     else if (currentStatus === 'interview-filter-btn') {
@@ -72,6 +72,7 @@ function toggleButtonStyle(id){
         filteredJob.classList.remove('hidden');
         renderRejectedCard();
     }
+    updateAvailableJobsCount();
 }
 
 mainContainer.addEventListener('click', function(event){
