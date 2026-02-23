@@ -16,11 +16,27 @@ const allFilterBtn = document.getElementById('all-filter-btn');
 const interviewFilterBtn = document.getElementById('interview-filter-btn');
 const rejectedFilterBtn = document.getElementById('rejected-filter-btn');
 
+
+function updateAvailableJobsCount() {
+    if (currentStatus === 'all') {
+        availableJobsCount.innerText = sectionCardCount.children.length;
+    } 
+    else if (currentStatus === 'interview-filter-btn') {
+        availableJobsCount.innerText = interviewList.length;
+    } 
+    else if (currentStatus === 'rejected-filter-btn') {
+        availableJobsCount.innerText = rejectedList.length;
+    }
+}
+
+
 function countCalculator(){
     totalCardCount.innerText = sectionCardCount.children.length;
-    availableJobsCount.innerText = sectionCardCount.children.length;
+    // availableJobsCount.innerText = sectionCardCount.children.length;
     interviewCardCount.innerText = interviewList.length;
     rejectedCardCount.innerText = rejectedList.length;
+
+    updateAvailableJobsCount();
 }
 
 countCalculator()
@@ -160,12 +176,12 @@ function renderInterviewCard(){
                     <p class="jobInfo text-[#64748B] py-4">${interview.jobInfo}</p>
                 </div>
                 <div>
-                    <button class="status bg-[#EEF4FF] text-[#002C5C] px-4 py-3 rounded-md font-semibold">${interview.status}</button>
+                    <button class="status bg-[#EEF4FF] text-[#002C5C] px-4 py-3 rounded-md font-semibold transform hover:scale-105">${interview.status}</button>
                     <p class="jobDetails py-2">${interview.jobDetails}</p>
                 </div>
                 <div class="py-4 flex gap-2">
-                    <button class="btn-interview bg-[#FFFFFF] text-[#10B981] border-2 border-[#10B981] px-4 py-2 rounded-md font-semibold">Interview</button>
-                    <button class="btn-rejected bg-[#FFFFFF] text-[#EF4444] border-2 border-[#EF4444] px-4 py-2 rounded-md font-semibold">Rejected</button>
+                    <button class="btn-interview bg-[#FFFFFF] text-[#10B981] border-2 border-[#10B981] px-4 py-2 rounded-md font-semibold cursor-pointer hover:bg-[#10B981] hover:text-[#FFFFFF]">Interview</button>
+                    <button class="btn-rejected bg-[#FFFFFF] text-[#EF4444] border-2 border-[#EF4444] px-4 py-2 rounded-md font-semibold cursor-pointer hover:bg-[#EF4444] hover:text-[#FFFFFF]">Rejected</button>
                 </div>
             </div>
         `
@@ -201,12 +217,12 @@ function renderRejectedCard(){
                     <p class="jobInfo text-[#64748B] py-4">${rejected.jobInfo}</p>
                 </div>
                 <div>
-                    <button class="status bg-[#EEF4FF] text-[#002C5C] px-4 py-3 rounded-md font-semibold">${rejected.status}</button>
+                    <button class="status bg-[#EEF4FF] text-[#002C5C] px-4 py-3 rounded-md font-semibold transform hover:scale-105">${rejected.status}</button>
                     <p class="jobDetails py-2">${rejected.jobDetails}</p>
                 </div>
                 <div class="py-4 flex gap-2">
-                    <button class="btn-interview bg-[#FFFFFF] text-[#10B981] border-2 border-[#10B981] px-4 py-2 rounded-md font-semibold">Interview</button>
-                    <button class="btn-rejected bg-[#FFFFFF] text-[#EF4444] border-2 border-[#EF4444] px-4 py-2 rounded-md font-semibold">Rejected</button>
+                    <button class="btn-interview bg-[#FFFFFF] text-[#10B981] border-2 border-[#10B981] px-4 py-2 rounded-md font-semibold cursor-pointer hover:bg-[#10B981] hover:text-[#FFFFFF]">Interview</button>
+                    <button class="btn-rejected bg-[#FFFFFF] text-[#EF4444] border-2 border-[#EF4444] px-4 py-2 rounded-md font-semibold cursor-pointer hover:bg-[#EF4444] hover:text-[#FFFFFF]">Rejected</button>
                 </div>
             </div>
         `
