@@ -1,6 +1,6 @@
 let interviewList = [];
 let rejectedList = [];
-let currentStatus = 'all';
+let currentStatus = 'all-filter-btn';
 
 let totalCardCount = document.getElementById('totalCount');
 let interviewCardCount = document.getElementById('interviewCount');
