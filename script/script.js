@@ -32,7 +32,6 @@ function updateAvailableJobsCount() {
 
 function countCalculator(){
     totalCardCount.innerText = sectionCardCount.children.length;
-    // availableJobsCount.innerText = sectionCardCount.children.length;
     interviewCardCount.innerText = interviewList.length;
     rejectedCardCount.innerText = rejectedList.length;
 
@@ -76,8 +75,6 @@ function toggleButtonStyle(id){
 }
 
 mainContainer.addEventListener('click', function(event){
-    // console.log(event.target.parentNode.parentNode);
-    // console.log(event.target.classList.contains('btn-interview'))
 
     if(event.target.classList.contains('btn-interview')){
         const card = event.target.parentNode.parentNode;
@@ -96,13 +93,12 @@ mainContainer.addEventListener('click', function(event){
             status: 'Interview', 
             jobDetails
         }
-        // console.log(cardInfo);
 
         const jobExist = interviewList.find(item => item.companyName == cardInfo.companyName);
         if(!jobExist){
             interviewList.push(cardInfo);
         }
-        // console.log(interviewList);
+
         rejectedList = rejectedList.filter(item=> item.companyName != cardInfo.companyName);
 
         if(currentStatus == 'rejected-filter-btn'){
@@ -110,7 +106,6 @@ mainContainer.addEventListener('click', function(event){
         }
 
         countCalculator();
-        // renderInterviewCard();
     }
     else if(event.target.classList.contains('btn-rejected')){
         const card = event.target.parentNode.parentNode;
@@ -129,13 +124,12 @@ mainContainer.addEventListener('click', function(event){
             status: 'Rejected', 
             jobDetails
         }
-        // console.log(cardInfo);
 
         const jobExist = rejectedList.find(item => item.companyName == cardInfo.companyName);
         if(!jobExist){
             rejectedList.push(cardInfo);
         }
-        // console.log(interviewList);
+
         interviewList = interviewList.filter(item=> item.companyName != cardInfo.companyName);
 
         if(currentStatus == 'interview-filter-btn'){
@@ -143,7 +137,13 @@ mainContainer.addEventListener('click', function(event){
         }
 
         countCalculator();
-        // renderRejectedCard();
+    }
+
+
+    if(event.target.classList.contains('delete-btn')){
+        const card = event.target.closest('.card');
+        card.remove();
+        countCalculator();
     }
 })
 
@@ -169,7 +169,7 @@ function renderInterviewCard(){
                         <h2 class="companyName text-[#002C5C] text-lg font-bold">${interview.companyName}</h2>
                         <p class="jobPosition text-[#64748B]">${interview.jobPosition}</p>
                     </div>
-                    <div class="w-10 h-10 border-2 border-gray-100 rounded-full flex justify-center items-center">
+                    <div class="w-10 h-10 border-2 border-gray-100 rounded-full flex justify-center items-center transform hover:scale-105">
                         <i class="fa-regular fa-trash-can"></i>
                     </div>
                 </div>
@@ -200,7 +200,6 @@ function renderRejectedCard(){
     }
 
     for(let rejected of rejectedList){
-        // console.log(interview);
         let div = document.createElement('div');
         div.className = 'card bg-[#FFFFFF] rounded-lg p-4';
         div.innerHTML = `
