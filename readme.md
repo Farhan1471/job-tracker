@@ -1,52 +1,64 @@
-### 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
-# Answer: 
+# 📌 Job Tracker
 
-getElementById() --> We know id is unique. When we use getElementById(), here we specify an id, it targets only that specific id. Example: getElementById('delete-btn'). It will target the button which id id 'delete-btn'
+Job Tracker is a simple web project that teaches the basics of how a job tracking page works. You can open it in your browser to see a job list layout and learn from the HTML, CSS, and JavaScript code.
 
-getElementsByClassName() --> A class name can be used for multiple element. When we use getElementsByClassName(), we can target all the elements who contains that specific class. Example: getElementsByClassName("card"). It will target all the elements who contains "card" class.
+---
 
-<div class="fruit">Mango</div>
-<div class="fruit">Orange</div>
-<div class="fruit">Apple</div>
-querySelector() --> It finds the first element for a common CSS selector. Here it target only <div class="fruit">Mango</div>
-querySelectorAll() --> It finds all the elements for a common CSS selector. Here it targets all.
+## ⚙️ Technologies Used
 
+- HTML  
+- CSS  
+- JavaScript  
 
+(This project does not use any backend or database — just front‑end code.) :contentReference[oaicite:1]{index=1}
 
-### 2. How do you create and insert a new element into the DOM?
-# Answer:
+---
 
-const paragraph = document.createElement("p");
-paragraph.innerText = "I love JavaScript";
-document.body.appendChild(paragraph);
+## ✨ Main Features
 
+- 📝 Basic layout for job tracker  
+- 👀 Easy to open and learn from  
+- 📁 Static frontend files you can modify  
 
-### 3. What is Event Bubbling? And how does it work?
-# Answer:
+---
 
-Event Bubbling is a mechanism of Document Object Module. When an event is triggered to run a specific element, it first runs that element and then bubble upwards to trigger it's parent elements.
+## 📦 Dependencies
 
-It works: 
-i. We click on a button
-ii. It handles click
-iii. Bubble up towards parent elements
-iv. Parent handles the event also if it contains listener
+No extra libraries or packages are used — it runs with plain HTML, CSS, and JS.
 
+---
 
-### 4. What is Event Delegation in JavaScript? Why is it useful?
-# Answer
+## 🛠️ How to Run Locally
 
-Event Delegation is a technique where we add a single event listener to the parent element without adding multiple event listener to the child elements. So, when a child element is clicked, parent element can handle that.
+1. **Clone the project**
+```
+git clone https://github.com/Farhan1471/job-tracker.git
+```
 
-It is useful because:
-i. We need less event listener. Instead of adding event listener to all child, if we add an event listener to the parent, parent can handle all child elements. 
-ii. Dynamic element addition. If we add a child element later, we don't need to add listener to it, parent element can handle it's event.
-iii. Though we have less event listener, we can get better performance and it will be easy to maintain.
+2. **Go into the folder**
+```
+cd job-tracker
+```
 
+3. **Open the project**
+- Double‑click `index.html` in the folder  
+or  
+- Right‑click → Open with → your browser (Chrome, Firefox, etc.)
 
-### 5. What is the difference between preventDefault() and stopPropagation() methods?
-# Answer
+Now you can see the project in your browser — no setup needed!
 
-preventDefault() --> It cancle the event if it is cancleable. Normally if we fill a form and click on submit button, it would submit the form. If we would use preventDefault(), then it can prevent form submission.
+---
 
-stopPropagation() --> Stop event from bubbling up to parents
+## 🔗 Links
+
+- 📂 GitHub Repository: https://github.com/Farhan1471/job-tracker 
+- 🌐 Live Version: https://farhan1471.github.io/job-tracker/
+
+---
+
+## 👨‍💻 Author
+
+**Farhan Islam**  
+📧 farhanislam395@gmail.com
+
+---
